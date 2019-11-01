@@ -1,0 +1,45 @@
+/* <!-- Lia McClane -->
+<!-- creating a dynamic cherboad that users can type into the url and create the size --> */
+
+* {
+    /* outline: 1px dotted red; */
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(11, 11, 100);
+}
+p{
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}
+.wrapper{
+    font-size: 0px;
+    line-height: 0px;
+}
+.row {
+    display: block;
+    text-align: center;
+    margin: 0px 0px -4px 0px;
+}
+.squ {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-left: -5px;
+}
+
+.row:nth-child(2n) .squ:nth-child(2n) {
+    background-color: ;
+}
+
+.row:nth-child(2n) .squ:nth-child(2n+1) {
+    background-color: red;
+}
+
+.row:nth-child(2n+1) .squ:nth-child(2n+1) {
+    background-color: black;
+}
+
+.row:nth-child(2n+1) .squ:nth-child(2n) {
+    background-color: red;
+}

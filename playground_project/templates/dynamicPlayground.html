@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='playground.css') }}">
+    <style>
+        /* * {
+            outline: 1px dotted red
+        } */
+
+        h1 {
+            margin: 0px auto;
+            height: 3em;
+            /* background-color: aquamarine; */
+            padding: 1em 0em 0em 0em;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 25px;
+        }
+        .wrapper {
+            margin: 0px auto;
+            max-width: 970px;
+            /* background-color: lightcoral; */
+            text-align: center;
+            padding: 1em 0em;
+        }
+
+        .squ {
+            display: inline-block;
+            background-color: {{ new_color }};
+            height: 10em;
+            width: 20%;
+            margin-left: 1.5em;
+        }
+
+        .squ:nth-child(4n+1){
+            margin-left: 0em;
+        }
+    </style>
+    <title>Dynamic Squares</title>
+</head>
+
+<body>
+    <h1>Welcome</h1>
+
+    {% if phrase %}
+     <p>{{phrase}}</p>
+    {% endif %}
+
+    {% if new_color %}
+     <p>you got {{numOfSqu}} {{new_color}} squares</p>
+    {% endif %}
+    
+
+    <div class="wrapper">
+        {% for x in range(0, numOfSqu) %}
+        <div class="squ">{{lotsOfSqu | safe}}</div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
