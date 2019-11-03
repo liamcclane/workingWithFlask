@@ -11,15 +11,15 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dojoServey.css') }}">
-    <style>
+    <!-- <style>
         /* * {
             outline: 1px dotted red;
         } */
-    </style>
+    </style> -->
     <title>Dojo Servey</title>
 </head>
 
-<body>
+<body background="mts.jpg">
     <div class="container">
         <div class="row text-center">
             <h1 class="mt-3 block">Welcome</h1>
@@ -28,65 +28,97 @@
             <h3 class="mt-3 block">Please fill out the servey after fill out the information below</h3>
         </div>
 
-        <div class="row justify-content-center">
-            <div class="col-7 border border-dark rounded p-3 rp-2">
-                <div class="row justify-align-center">
-                    <div class="col">Name</div>
+        <div class="row">
 
-                    <input class="col" type="text" name="name">
-                    {{% if homepg %}}
-                    {{% endif %}}
+            <form action="/results" method="POST" class="col-10">
 
-                    {{% if showInfo %}}
-                    random words
-                    {{% endif %}}
+                <div class="col-7 border border-dark rounded p-3 rp-2" id="theBox">
+                    <div class="row">
 
+                        <div class="col">
+                            <div class="col">Name</div>
+                        </div>
+
+                        {% if homepg %}
+                        <div class="col">
+                            <input class="col" type="text" name="name_input">
+                        </div>
+                        {% endif %}
+
+                        {% if showInfo %}
+                        {{ arr[0] }}
+                        {% endif %}
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="col mt-3">Loaction</div>
+                        </div>
+
+                        {% if homepg %}
+                        <div class="col">
+                            <select class="col mt-3" name="location_input">
+                                <option value="">pick your loaction</option>
+                                <option value="San Jose">San Jose</option>
+                                <option value="Seattle">Seattle</option>
+                                <option value="Austin">Austin</option>
+                            </select>
+                        </div>
+
+                        {% endif %}
+
+                        {% if showInfo %}
+                        {{ arr[1] }}
+                        {% endif %}
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="col mt-3">Favorite Language</div>
+                        </div>
+
+                        {% if homepg %}
+                        <div class="col">
+                            <select class="col mt-3" name="favLan_input">
+                                <option value="">chose one</option>
+                                <option value="pthyon">Python</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="java">Java</option>
+                            </select>
+                        </div>
+
+                        {% endif %}
+
+                        {% if showInfo %}
+                        {{ arr[2] }}
+                        {% endif %}
+
+                    </div>
+                    <div class="col">Comments : </div>
+                    {% if homepg %}
+
+                    <div class="row border border-dark">
+                        <div class="col">
+                            <input type="text" name="comment_input">
+                        </div>
+                    </div>
+
+                    {% endif %}
+
+                    {% if showInfo %}
+                    {{ arr[3] }}
+                    {% endif %}
 
                 </div>
-                <div class="row justify-align-center">
-                    <div class="col mt-3">Loaction</div>
 
-                    <select class="col mt-3" name="location">
-                        <option value="non_urgent">pick your loaction</option>
-                        <option value="very_urgent">San Jose</option>
-                        <option value="urgent">Seatttel</option>
-                        <option value="low_urgent">Austin</option>
-                    </select>
-                    {{% if homepg %}}
-                    {{% endif %}}
-
-                    {{% if showInfo %}}
-                    random words
-                    {{% endif %}}
-                </div>
-
-                <div class="row justify-align-center">
-                    <div class="col mt-3">Favorite Language</div>
-                    
-                    <select class="col mt-3" name="languages">
-                        <option value="">chose one</option>
-                        <option value="pthyon">Python</option>
-                        <option value="javascript">JavaScript</option>
-                        <option value="java">Java</option>
-                    </select>
-                    {{% if homepg %}}
-                    {{% endif %}}
-
-                    {{% if showInfo %}}
-                    should be loaction
-                    {{% endif %}}
-
-                </div>
-                <div class="col">Comments : </div>
-                <div class="row border border-dark">
-                    <input class="justify-fill" type="text" name="comment">
-                </div>
-
-            </div>
         </div>
+
         <div class="row justify-content-center mt-4">
-            <button class="btn btn-outline-primary">Submit</button>
+            <input type='submit' value='create user'>
+            <!-- <button class="btn btn-outline-primary" type="submit" value="create user">Submit</button> -->
         </div>
+        </form>
 </body>
 
 </html>

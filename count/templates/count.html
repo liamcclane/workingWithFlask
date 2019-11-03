@@ -1,0 +1,54 @@
+<!-- Lia McClane: 11/1/2019 Friday -->
+<!-- # playing with Flask and understanding how to get info from webpage to carry over -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- attaching bootstrap stuffs -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- attaching my own style sheet too-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='count.css') }}">
+    <title>Boring Counter</title>
+</head>
+
+<body>
+    <div class="container justify-content-center">
+        <div class="row">
+            <h1>Counter</h1>
+        </div>
+        <div class="row">
+            <h3>you have refreshed {{ session['num_visits'] }} times</h3>
+        </div>
+        <div class="row">
+
+            <form action="/doubleV" method="POST">
+                <button class="btn btn-outline-primary">Visits doubled</button>
+            </form>
+
+            <form action="/destroy_session">
+                <button class="btn btn-outline-danger">Clear Visits</button>
+            </form>
+
+        </div>
+
+        <div class="row">
+            <form action="/incrementV" method="POST">
+                input an integer of how many time you want to increase your amout of Visits
+                <input type="int" name='increasedV'>
+                <input type="submit" value='add'>
+            </form>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

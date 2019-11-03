@@ -1,0 +1,27 @@
+* {
+    /* outline: 1px dotted red; */
+    margin: 0px auto;
+}
+
+input{
+    border-radius: 0.5px;
+    box-shadow: 5px 5px 4px #aaaaca;
+    margin-top: 15px;
+}
+
+#high,
+#low,
+#correct {
+    background-image: linear-gradient(to right bottom, rgb(253, 43, 43), rgb(194, 38, 38), rgb(223, 46, 46));;
+    box-shadow: 5px 5px 4px #aaaaca;
+    color: white;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 1.5em;
+    padding: 60px;
+}
+
+#correct {
+    background-image: linear-gradient(to right bottom, rgb(48, 236, 48), rgb(44, 199, 30), rgb(45, 235, 70));;
+    padding: 55px;
+}

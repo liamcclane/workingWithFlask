@@ -18,17 +18,17 @@
         Email: <input type='text' name='email'>
         <input type='submit' value='create user'>
     </form>
-    {{% if submitted %}}
+    {% if submitted %}
     <table>
         <tr>
           <th>Name</th>
           <th>Email</th>
         </tr>
         <tr>
-          <td>{{ name_on_template }}</td>
-          <td>{{ email_on_template }}</td>
+          <td>{{ session['username'] }}</td>
+          <td>{{ session['useremail'] }}</td>
         </tr>
       </table>
-    {{% endif %}}
+    {% endif %}
 
 </body>

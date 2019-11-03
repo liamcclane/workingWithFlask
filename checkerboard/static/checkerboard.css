@@ -29,7 +29,7 @@ h1 {
 }
 
 .row:nth-child(2n) .squ:nth-child(2n) {
-    background-color: ;
+    background-color: black;
 }
 
 .row:nth-child(2n) .squ:nth-child(2n+1) {

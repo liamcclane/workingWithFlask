@@ -1,0 +1,76 @@
+<!-- Lia McClane -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- attaching bootstrap stuffs -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- attaching my own style sheet too-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='great_number_game.css') }}">
+    <title>The Great Number Game</title>
+    <style>
+        * {
+            outline: 1px dotted red;
+            margin: 0px auto;
+        }
+
+        #high,
+        #low,
+        #correct {
+            background-color: rgba(177, 10, 10, 0.829);
+            height: 150px;
+            border: 1px solid black;
+            border-radius: 1.5em;
+            padding: 60px;
+        }
+
+        #correct {
+            background-color: green;
+            padding: 55px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- top into -->
+        <div class="col-sm-8 text-center">
+            <div class="row mt-4">
+                <h1 class="block">Welcome to the Great Number Game</h1>
+            </div>
+            <h3 class="block">I am thinking of a number between 1 and 20</h3>
+            <p class="block">take a guess!</p>
+            <p class="block">the computer have already chosen {{ session['compNum'] }}</p>
+
+
+
+            <div class="row">
+                <div class="col-5 text-center border rounded" id='high'>
+                    TOO HIGH!!
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-5">
+                    Wanna play again?
+                    <div class="row justify">
+                        <form action="/playAgain">
+                            <input type="submit" class="col-10 ml-3">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

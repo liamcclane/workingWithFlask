@@ -9,56 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='checkerboard.css') }}">
     <title>Lia's Checkerboard</title>
-    <!-- <style>
-        * {
-            outline: 1px dotted red;
-            font-family: Arial, Helvetica, sans-serif;
-            color: rgb(11, 11, 100);
-        }
-        p{
-            text-align: center;
-        }
-        h1 {
-            text-align: center;
-        }
-        .wrapper{
-            font-size: 0px;
-            line-height: 0px;
-        }
-        .row {
-            display: block;
-            text-align: center;
-            margin: 0px 0px -4px 0px;
-        }
-        .squ {
-            display: inline-block;
-            width: 100px;
-            height: 100px;
-            margin-left: -5px;
-        }
 
-        .row:nth-child(2n) .squ:nth-child(2n) {
-            background-color: {{ oldB }};
-        }
-
-        .row:nth-child(2n) .squ:nth-child(2n+1) {
-            background-color: {{ oldR }};
-        }
-
-        .row:nth-child(2n+1) .squ:nth-child(2n+1) {
-            background-color: {{ oldB }};
-        }
-
-        .row:nth-child(2n+1) .squ:nth-child(2n) {
-            background-color: {{ oldR }};
-        }
-    </style> -->
 </head>
 
 <body>
     <h1>Lia's Dynamic Checkerboard</h1>
     <div id="wrapper">
+
         
+
         {% for i in range(0,x): %}
         <div class="row">
             {% for j in range(0,y)%}
@@ -69,7 +28,7 @@
     </div>
     <hr>
     <p>{{phrase}}</p>
-<!-- 
+    <!-- 
 <div class="row">
     <div class="squ">placeholder</div><div class="squ">placeholder</div><div class="squ">placeholder</div>
 </div>
